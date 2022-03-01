@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Air Temp</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body style="background: #000;">
+ <div class="login">
+	<h1>Air Temperature Detection</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Type" placeholder="Type" required="required" />
+		<input type="text" name="Process temperature [K]" placeholder="Process temperature [K]" required="required" />
+        <input type="text" name="Rotational speed [rpm]" placeholder="Rotational speed [rpm]" required="required" />
+        <input type="text" name="Torque [Nm]" placeholder="Torque [Nm]" required="required" />
+        <input type="text" name="Tool wear [min]" placeholder="Tool wear [min]" required="required" />
+        <input type="text" name="Machine failure" placeholder="Machine failure" required="required" />
+        <input type="text" name="TWF" placeholder="TWF" required="required" />
+        <input type="text" name="HDF" placeholder="HDF" required="required" />
+        <input type="text" name="PWF" placeholder="PWF" required="required" />
+        <input type="text" name="OSF" placeholder="OSF" required="required" />
+        <input type="text" name="RNF" placeholder="RNF" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Air Temperature</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+</body>
+</html>
