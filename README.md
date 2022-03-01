@@ -8,3 +8,6 @@ Model has been eniterly trained on this dataset. The usual Machine Learning Pipe
 Data Loading->Data Cleaning->Exploratory Data Analysis->Standardization->Model Building->Model Testing->Model Deployment. 
 
 The model used is a simple Linear Regression Model, It's a very simple project just used for understanding of deployment and Linear Regression implementation.
+
+Here is the Deployed Link-
+http://air-temp-detection.herokuapp.com/
